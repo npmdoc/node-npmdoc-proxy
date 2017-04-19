@@ -1,1 +1,39 @@
-{     "devDependencies": {         "proxy": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-proxy",     "homepage": "https://github.com/npmdoc/node-npmdoc-proxy",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-proxy.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [proxy (v0.2.4)](https://github.com/TooTallNate/proxy#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-proxy.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-proxy) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-proxy.svg)](https://travis-ci.org/npmdoc/node-npmdoc-proxy)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "proxy": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-proxy",
+    "keywords": [
+        "documentation",
+        "proxy"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_proxy.js",
+    "name": "npmdoc-proxy",
+    "nameAlias": "npmdoc_proxy",
+    "nameOriginal": "npmdoc-proxy",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-proxy.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
